@@ -1,0 +1,201 @@
+  MTU is 1500 bytes
+  Helper address is not set
+  Directed broadcast forwarding is disabled
+  Outgoing access list is not set
+  Inbound  access list is not set
+  Proxy ARP is enabled
+  Security level is default
+  Split horizon is enabled
+  ICMP redirects are always sent
+  ICMP unreachables are always sent
+  ICMP mask replies are never sent
+  IP fast switching is disabled
+  IP fast switching on the same interface is disabled
+  IP Flow switching is disabled
+  IP Fast switching turbo vector
+  IP multicast fast switching is disabled
+  IP multicast distributed fast switching is disabled
+  Router Discovery is disabled
+  IP output packet accounting is disabled
+  IP access violation accounting is disabled
+  TCP/IP header compression is disabled
+  RTP/IP header compression is disabled
+  Probe proxy name replies are disabled
+  Policy routing is disabled
+  Network address translation is disabled
+  BGP Policy Mapping is disabled
+  Input features: MCI Check
+  WCCP Redirect outbound is disabled
+  WCCP Redirect inbound is disabled
+  WCCP Redirect exclude is disabled
+FastEthernet0/1 is administratively down, line protocol is down (disabled)
+  Internet protocol processing disabled
+Serial0/0/0 is up, line protocol is up (connected)
+  Internet address is 40.0.0.20/24
+  Broadcast address is 255.255.255.255
+  Address determined by setup command
+  MTU is 1500
+  Helper address is not set
+  Directed broadcast forwarding is disabled
+  Outgoing access list is not set
+  Inbound  access list is not set
+  Proxy ARP is enabled
+  Security level is default
+  Split horizon is enabled
+  ICMP redirects are always sent
+  ICMP unreachables are always sent
+  ICMP mask replies are never sent
+  IP fast switching is disabled
+  IP fast switching on the same interface is disabled
+  IP Flow switching is disabled
+  IP Fast switching turbo vector
+  IP multicast fast switching is disabled
+  IP multicast distributed fast switching is disabled
+  Router Discovery is disabled
+  IP output packet accounting is disabled
+  IP access violation accounting is disabled
+  TCP/IP header compression is disabled
+  RTP/IP header compression is disabled
+  Probe proxy name replies are disabled
+  Policy routing is disabled
+  Network address translation is disabled
+  WCCP Redirect outbound is disabled
+  WCCP Redirect exclude is disabled
+  BGP Policy Mapping is disabled
+Serial0/0/1 is down, line protocol is down (disabled)
+  Internet address is 50.0.0.10/24
+  Broadcast address is 255.255.255.255
+  Address determined by setup command
+  MTU is 1500
+  Helper address is not set
+  Directed broadcast forwarding is disabled
+  Outgoing access list is not set
+  Inbound  access list is not set
+  Proxy ARP is enabled
+  Security level is default
+  Split horizon is enabled
+  ICMP redirects are always sent
+  ICMP unreachables are always sent
+  ICMP mask replies are never sent
+  IP fast switching is disabled
+  IP fast switching on the same interface is disabled
+  IP Flow switching is disabled
+  IP Fast switching turbo vector
+  IP multicast fast switching is disabled
+  IP multicast distributed fast switching is disabled
+  Router Discovery is disabled
+  IP output packet accounting is disabled
+  IP access violation accounting is disabled
+  TCP/IP header compression is disabled
+  RTP/IP header compression is disabled
+  Probe proxy name replies are disabled
+  Policy routing is disabled
+  Network address translation is disabled
+  WCCP Redirect outbound is disabled
+  WCCP Redirect exclude is disabled
+  BGP Policy Mapping is disabled
+Vlan1 is administratively down, line protocol is down
+  Internet protocol processing disabled
+
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#
+Router#show ip int br
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        20.0.0.1        YES manual up                    up 
+FastEthernet0/1        unassigned      YES unset  administratively down down 
+Serial0/0/0            40.0.0.20       YES manual up                    up 
+Serial0/0/1            50.0.0.10       YES manual down                  down 
+Vlan1                  unassigned      YES unset  administratively down down
+Router#
+%LINK-5-CHANGED: Interface Serial0/0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial0/0/1, changed state to up
+
+Router#show ip int br
+Interface              IP-Address      OK? Method Status                Protocol 
+FastEthernet0/0        20.0.0.1        YES manual up                    up 
+FastEthernet0/1        unassigned      YES unset  administratively down down 
+Serial0/0/0            40.0.0.20       YES manual up                    up 
+Serial0/0/1            50.0.0.10       YES manual up                    up 
+Vlan1                  unassigned      YES unset  administratively down down
+Router#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#router ospf ?
+  <1-65535>  Process ID
+Router(config)#router ospf router ospf 20
+                           ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#router ospf router 20
+                           ^
+% Invalid input detected at '^' marker.
+	
+Router(config)#router ospf 20
+Router(config-router)#network 20.0.0.0?
+A.B.C.D  
+Router(config-router)#network 20.0.0.0 0.0.0.255 
+% Incomplete command.
+Router(config-router)#network 20.0.0.0 0.0.0.255 area?
+area  
+Router(config-router)#network 20.0.0.0 0.0.0.255 area 100
+Router(config-router)#network 40.0.0.0 0.0.0.255 area 100
+Router(config-router)#network 40.0.0.0 0.0.0.255 area 100
+00:48:24: %OSPF-5-ADJCHG: Process 20, Nbr 60.0.0.10 on Serial0/0/0 from LOADING to FULL, Loading Done
+
+Router(config-router)#network 50.0.0.0 0.0.0.255 area 100
+Router(config-router)#end
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip ospf neighbor
+
+
+Neighbor ID     Pri   State           Dead Time   Address         Interface
+60.0.0.10         0   FULL/  -        00:00:37    40.0.0.10       Serial0/0/0
+Router#
+00:50:25: %OSPF-5-ADJCHG: Process 20, Nbr 60.0.0.20 on Serial0/0/1 from LOADING to FULL, Loading Done
+
+Router#
